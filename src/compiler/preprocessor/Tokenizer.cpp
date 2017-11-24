@@ -969,7 +969,7 @@ static void yy_flex_strncpy (char *,yyconst char *,int ,yyscan_t yyscanner);
 static int yy_flex_strlen (yyconst char * ,yyscan_t yyscanner);
 #endif
 
-#ifndef YY_NO_INPUT
+#if 0
 
 #ifdef __cplusplus
 static int yyinput (yyscan_t yyscanner );
@@ -1858,7 +1858,7 @@ static int yy_get_next_buffer (yyscan_t yyscanner)
 
 #endif
 
-#ifndef YY_NO_INPUT
+#if 0
 #ifdef __cplusplus
     static int yyinput (yyscan_t yyscanner)
 #else
@@ -1883,7 +1883,7 @@ static int yy_get_next_buffer (yyscan_t yyscanner)
 
 		else
 			{ /* need more input */
-			int offset = yyg->yy_c_buf_p - yyg->yytext_ptr;
+			auto offset = yyg->yy_c_buf_p - yyg->yytext_ptr;
 			++yyg->yy_c_buf_p;
 
 			switch ( yy_get_next_buffer( yyscanner ) )
@@ -2014,7 +2014,7 @@ static void pp_load_buffer_state  (yyscan_t yyscanner)
 	if ( ! b )
 		YY_FATAL_ERROR( "out of dynamic memory in pp_create_buffer()" );
 
-	b->yy_buf_size = (yy_size_t)size;
+	b->yy_buf_size = size;
 
 	/* yy_ch_buf has to be 2 characters longer than the size given because
 	 * we need to put in 2 end-of-buffer characters.

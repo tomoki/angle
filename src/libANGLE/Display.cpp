@@ -90,21 +90,30 @@ typedef std::map<EGLNativeWindowType, Surface*> WindowSurfaceMap;
 // associated with it.
 static WindowSurfaceMap *GetWindowSurfaces()
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
     static WindowSurfaceMap windowSurfaces;
+#pragma clang diagnostic pop
     return &windowSurfaces;
 }
 
 typedef std::map<EGLNativeDisplayType, Display *> ANGLEPlatformDisplayMap;
 static ANGLEPlatformDisplayMap *GetANGLEPlatformDisplayMap()
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
     static ANGLEPlatformDisplayMap displays;
+#pragma clang diagnostic pop
     return &displays;
 }
 
 typedef std::map<Device *, Display *> DevicePlatformDisplayMap;
 static DevicePlatformDisplayMap *GetDevicePlatformDisplayMap()
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
     static DevicePlatformDisplayMap displays;
+#pragma clang diagnostic pop
     return &displays;
 }
 
@@ -921,7 +930,10 @@ const ClientExtensions &Display::getClientExtensions()
 
 const std::string &Display::getClientExtensionString()
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
     static const std::string clientExtensionsString = GenerateExtensionsString(getClientExtensions());
+#pragma clang diagnostic pop
     return clientExtensionsString;
 }
 

@@ -524,7 +524,10 @@ static bool IsValidES3CopyTexImageCombination(const Format &textureFormat,
     const auto &textureFormatInfo     = *textureFormat.info;
     const auto &framebufferFormatInfo = *framebufferFormat.info;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
     static const CopyConversionSet conversionSet = BuildValidES3CopyTexImageCombinations();
+#pragma clang diagnostic pop
     if (conversionSet.find(CopyConversion(textureFormatInfo.format,
                                           framebufferFormatInfo.format)) != conversionSet.end())
     {
