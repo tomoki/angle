@@ -8,7 +8,7 @@
 
 #include <stddef.h>
 
-#include "KHR/khrplatform.h"
+#include "khrplatform.h"
 
 #include <array>
 #include <map>

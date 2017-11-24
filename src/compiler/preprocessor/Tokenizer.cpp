@@ -1148,7 +1148,8 @@ static void yy_flex_strncpy ( char *, const char *, int , yyscan_t yyscanner);
 static int yy_flex_strlen ( const char * , yyscan_t yyscanner);
 #endif
 
-#ifndef YY_NO_INPUT
+#if 0
+
 #ifdef __cplusplus
 static int yyinput ( yyscan_t yyscanner );
 #else
@@ -2049,7 +2050,7 @@ static int yy_get_next_buffer (yyscan_t yyscanner)
 
 #endif
 
-#ifndef YY_NO_INPUT
+#if 0
 #ifdef __cplusplus
     static int yyinput (yyscan_t yyscanner)
 #else

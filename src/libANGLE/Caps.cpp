@@ -696,7 +696,10 @@ const ExtensionInfoMap &GetExtensionInfoMap()
         return map;
     };
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
     static const ExtensionInfoMap extensionInfo = buildExtensionInfoMap();
+#pragma clang diagnostic pop
     return extensionInfo;
 }
 
